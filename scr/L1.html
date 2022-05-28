@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="..\css\indexCSS.css">
+    <style>
+        #proce{
+            text-align: left;
+            position:relative;
+            left: 40%;
+        }
+    </style>
+    <title>程序是怎么执行的（一）</title>
+    
+</head>
+<body>
+    <button class="backbtn"><a id="blink" href="..\scr\content.html">返回目录</a></button>
+    <button class="nextbtn"><a id="blink" href="..\scr\L2.html">下一章节</button>
+    
+    <div id="dir">
+        <dir>
+            <li><a href="#wip">什么是程序</a></li>
+            <li><a href="#wipp">程序在哪里执行</a></li>
+            
+        </dir>
+    </div>
+    <div id="CenterBox">
+    <h1 align="center">1.程序是怎么执行的（一）</h1>
+    <p class="update">Last Update: 2022/5/28</p>
+    <hr>
+    <p>我们编程的目的是为了什么？是为了写程序。</p><p>当一条条程序组合在一起，你中有我，我中有你，牵一发而动全身时，就组成了应用。</p><br>
+    <h2><a name="wip">什么是程序</a></h2>
+    <P>程序是一个指令序列。计算机程序是一组计算机能识别和执行的指令，运行于电子计算机上，
+        满足人们某种需求的信息化工具；它以某些程序设计语言编写，运行于某种目标结构体系上。
+    </P>
+    <p>假使Skipper有一个不懂外语的法国仆人，名为Delmore。现在，Skipper用法语命令Delmore把一头大象塞进冰箱。</p>
+    <p>Delmore想了想该如何完成主人吩咐的命令，便拟定了如下步骤：</p>
+    <div id="proce">
+    <p>①打开冰箱门</p>
+    <p>②把大象塞进冰箱</p>
+    <P>③关上冰箱的门</P>
+    </div>
+    <p>Delmore制定的这套把大象塞进冰箱的方法，就可以看做是一个程序。</p>
+    <p>Delmore苦学了一段时间的中文，现在他也能听懂优美的中国话了。一天，Skipper用中文命令Delmore把另一头大象塞进冰箱。</p>  
+    <p>Delmore拍了拍手，弯腰行了个礼，“好，我听懂了！”便去哼哧哼哧地把大象塞进冰箱。</p>
+     
+    <p>通过上述例子，是不是对程序的概念有了更具体的理解了呢？如果把Skipper看做程序员，那Delmore就是计算机。使用命令的语言，就是编程语言。
+        即使语言不同，但只要计算机能够理解，便能够完成同样的目的。Delmore制定的把大象塞进冰箱的步骤，就是程序。当他哼哧哼哧地按照设计的程序执行任务时，整个活动过程就叫做进程。
+    </p> 
+    <p align="center"><b>程序（program）是静态的，当程序运行时，成为进程（process）。进程终止后又恢复成程序。</b>
+    </p><br>
+    <h2><a name="wipp">程序在哪里执行</a></h2>
+    <P>程序的执行，离不开数据。代码也是一种数据。所有的数据，在计算机底层内都以二进制的方式存储着，即0和1。</P>
+    <p>数据存储在计算机的硬盘（Disk）里，当数据被程序执行时，数据从硬盘被读取到内存（Memory）中，由CPU进行处理内存中的数据。</p>
+    <img class="newimg" src="..\img\程序.png">
+    <p>你是否有过使用word的时候，因为没来得及保存，电脑突然的关机导致前面洋洋洒洒写的东西丢失了呢？这是因为电脑断电后内存中的数据永久消失，硬盘保存的数据不会。
+        当然现在word有了自动保存的功能，这种情况也很少发生了。</p>
+    <p>内存中存储的数据可以快速被CPU读取和运算，而如果CPU直接从硬盘中读取数据，会非常慢。
+    </p>
+    <p>我们将在下一节中细细聊聊程序是如何在内存中执行的。</p>
+        
+
+    </div>
+</body>
+</html>

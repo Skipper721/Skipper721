@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="..\css\indexCSS.css">
+    <title>3.编程介绍（一）</title>
+</head>
+<body>
+    <button class="backbtn"><a id="blink" href="..\scr\content.html">返回目录</a></button>
+    <button class="nextbtn"><a id="blink" href="..\scr\L4.html">下一章节</button>
+    
+    <div id="dir">
+        <dir>
+            <li><a href="#wipm">什么是编程</a></li>
+            <li><a href="#wipl">什么是编程语言</a></li>
+            <li><a href="#class">高级语言分类</a></li>
+            
+        </dir>
+    </div>
+    <div id="CenterBox">
+        <h1 align="center">3.编程介绍（一）</h1>
+        <p class="update">Last Update: 2022/5/28</p>
+        <hr>
+        <h2><a name="wipm">什么是编程</h2>
+        <p>编程就是使用编程语言跟计算机交流的过程。</p><br>
+        <h2><a name="wipl">什么是编程语言</a></h2>
+        <h3 style="color: red;">&nbsp;低级语言</h3>
+        <p>分为机器语言和汇编语言，直接用计算机指令编写程序。</p>
+        <p><b>机器语言</b>：使用二进制0和1来操作计算机，能看得懂的都是大神级别。
+        </p>
+        <p><b>汇编语言</b>：在0和1基础上增加了助记符，如表示两数相加使用ADD。助记符实际上就是二进制操作指令的一种抽象，在运行时还是要转成二进制执行，比如计算机读到ADD时会将其转化成00000011。汇编语言相比机器语言稍稍友好点。
+        </p>
+        <h3 style="color: red;">&nbsp;高级语言</h3>
+        <p>C、C++、Java、Python、JavaScript、PHP等都是高级语言，相对于低级语言来说，高级语言采用易于识别和记忆的字符来作为关键字，也更接近人类的思维方式，编写容易读写性好，开发效率更高。高级语言在计算机里运行时会转换成低级语言，这样机器才能执行命令。
+        </p>
+        <p>高级语言就像是翻译，将很难看懂的机器语言转换成人类能够理解的语言（反编译），编译器会将高级语言转换成机器语言让计算机执行命令（编译）。
+        </p><br>
+        <h2><a name="class">高级语言分类</a></h2>
+        <p>高级语言又可以分为如下两类：
+        </p>
+        <p><b>面向过程语言</b>（Procedure Oriented Programming 简称POP）</p>
+        <p>代表：C语言（万物之源）</p>
+        <p><b>面向对象语言</b> (Object Oriented Programming 简称OOP)</p>
+        <p>代表：C++ (C的plus版)、C# （比C++还要多两个+，其实关系不大）、Java、JavaScript （与Java没有半毛钱关系）等。</p>
+        <p>简单来说，二者的<span><a href="https://zhuanlan.zhihu.com/p/28427324" target="_blank" style="color:cornflowerblue;">区别</a></span>，在于开发时的关注点不同。</p>
+        <P>面向过程是一种以过程为中心的编程思想，它首先分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，在使用时依次调用，是一种基础的顺序的思维方式。
+            </p>
+        <p>面向对象是按人们认识客观世界的系统思维方式，采用基于对象（实体）的概念建立模型，模拟客观世界分析、设计、实现软件的编程思想，通过面向对象的理念使计算机软件系统能与现实世界中的系统一一对应。
+        </p>    
+
+
+    </div>
+</body>
+</html>

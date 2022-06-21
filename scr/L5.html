@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="..\css\indexCSS.css">
+    <title>基本数据类型</title>
+</head>
+<body>
+    <button class="backbtn"><a id="blink" href="..\scr\content.html">返回目录</a></button>
+    <button class="nextbtn"><a id="blink" href="..\scr\L6.html">下一章节</button>
+    <div id="dir">
+        <dir>
+            <li><a href="#a01">基本内存结构</a></li>
+            <li><a href="#a02">byte</a></li>
+            <li><a href="#a03">char</a></li>
+            <li><a href="#a04">short</a></li>
+            <li><a href="#a05">int</a></li>
+            <li><a href="#a06">long</a></li>
+            <li><a href="#a07">浮点数</a></li>
+            <li><a href="#a08">boolean</a></li>
+            
+        </dir>
+    </div>
+    <div id="CenterBox">
+        
+        <h1 align="center">1.基本数据类型</h1>
+        <p class="update">Last Update: 2022/6/17</p>
+        <hr>
+        <h2><a name="a01">基本内存结构</h2>
+        <P>在讲述数据类型前，先来了解下内存的基本结构，即堆和栈。</P>
+        <img src="..\img\堆栈.PNG">
+        <p>该部分能讲的也多，但也没必要讲太多，只需记住，声明的基本数据类型数据存在图中长条栈里，而引用数据类型数据存放在堆里。数据出栈的原则是<span style="color:red">先入后出</span>，即越先在栈里声明的数据，越排在后面被销毁。（当数据不再需要的时候，JVM的垃圾清理机制会自动销毁无用的数据。）</p>
+        <h2><a name="a02">byte</a></h2>
+        <p>Java的基本数据类型有byte、char、short、int、long、float和double。其中，byte是最小的数据类型，即占用内存最小。每个字节大小是固定的，即8位，也就是一字节。1024字节=1KB。</p>
+        <p>byte的值只能是数字，取值范围是[-128,127]。这个范围是怎么来的呢？1个byte是8位，8位二进制，即2的8次方，可以表示256个整数。分了一半给负数，分了一个给0，剩下的正整数最大就是127。byte的默认值为0，即声明一个byte类型的变量，却不对该变量赋值的话，则该变量的值默认为0。</p>
+        <img class="newimg" src="..\img\byte.PNG">
+        <p>如图所示，在编译器里声明了x,y,z三个类型为byte的变量。变量y的值为128，大于byte的容量，编译器报错（下面的红色波浪线表示报错）。</p>
+        <p>byte的优点就是使用起来占内存小。我们写程序时声明的变量，方法等，都是实际在内存中占用大小的。缺点也很明显，范围太小。当我们需要byte范围以外的数值时，就不能声明变量为byte，而是选择容量更大的数据类型。</p>
+        <img src="..\img\byte2.PNG">
+        <p align="center"><b>声明的x和z存储在内存的栈中。当x和z都不需要时，z先出栈，最先被销毁，其次为x。</b></p>
+        <br>
+        <h2><a name="a03">char</a></h2>
+        <p>char是字符的意思。我们常说的字符串，就是一个一个被串起来的字符的意思。实际在内存里，字符串就是将一个一个字符串起来的结构。char的大小是16位，除了数字以外，可以表示一个字母或者汉字。</p>
+        <img class="newimg" src="..\img\char.PNG">
+        <p>注意，即使a的值是0，这个0的类型也是字符而不是数字。Java中声明char的值时使用单引号，声明字符串String使用双引号。</p>
+        <br>
+        <h2><a name="a04">short</a></h2>
+        <p>short的容量相对于byte来说要大很多，大小是16位，取值范围是[-32768,32767]。char的默认值为0。</p>
+        <p>byte和short在实际开发中并不常用到。虽然他们所占内存空间小——早期计算器内存大小有限的情况下人们会尽量想着节约内存提升程序运作效率，但随着计算机硬件的发展，这点空间的节约就跟苍蝇腿一样。目前最常声明整数数据类型是int，全称integer。</p>
+        <br>
+        <h2><a name="a05">int</a></h2>
+        <p>通常来说，如果要声明一个整数值，使用int就足够了。int的大小是32位，取值范围为[-2147483648,2147483647],默认值为0。</p>
+        <img class="newimg" src="..\img\int.PNG">
+        <p>对于超过int范围的数，比如身份证数字，就要使用比int还大的数据类型long，或者使用字符串的方法来表示。计算机也会有精度缺失的问题。比如当数字非常非常大的时候，或者数字类型是浮点数，即小数，进行运算最后得出的结果会变得不准确。在这种情况下如果想要使结果变得准确，就需要使用包装类来声明变量，此处不表。</p>
+        <br>
+        <h2><a name="a06">long</a></h2>
+        <p>long大小是64位，取值范围[-9223372036854775808,9223372036854775807]，可以说是非常大了。默认值为0L。对long类型变量进行赋值时，值的后面需要加一个l或者L，大小写无所谓，最好使用大写以方便区分数字1和字母l。</p>
+        <p>以上讲了整数和字符，下面来说浮点数float和double。</p>
+        <br>
+        <h2><a name="a07">浮点数</a></h2>
+        <p>浮点数，即小数。浮点数有两种声明基本数据类型，分别为float和double。这两个的区别和各个整数类型一样，在于各自的容量大小不同。</p>
+        <p>float容量相对于double小，大小是32位，默认值为0.0f。声明float类型时，可以在值后面加f。</p>
+        <p>double容量较大，为64位，默认值为0.0d。声明double类型时，可以在值后面加d。</p>
+        <p>float和double绝对不可以用于对精确度要求高的项目里，比如用它们表示货币，用它们计算利息等。</p>
+        <img class="newimg" src="..\img\chathistory01.PNG">
+        <img class="newimg" src="..\img\chathistory02.PNG">
+        <p>来举个例子说明一下精度缺失的问题。上图的程序中，声明了一个double类型的浮点数i，值为0.1。一个int整数j，值为0。还有一个double类型的浮点数sum，初始值为0，用来计算总和。</p>
+        <p>while循环进行判断，每当j小于100时，sum的值等于i的值+sum的值，并且j的值每次自增1。当j刚好等于100的时候，结束这个循环。最后打印sum的值。</p>
+        <p>懒人版：将0.1乘以100，并输出最后结果。</p>
+        <p>通过结果可以看出，sum最终的值并不是10.0，而是接近于10.0的一个浮点数。这就是精度缺失。</p>
+        <p>这个问题，如果拿来考考开发们或许会挺有意思的。被提问的这个开发，又将这个题目去问了一个江苏银行的开发， 对方也答不上来。</p>
+        <p>还是回归本质，前面已经提到多次，不管是什么数据，在拿到内存里由计算机执行的时候，最终都会转换成二进制。我们看到的数字，是十进制表示的，这符合我们人类的思维习惯，但不是计算机所习惯的。计算机在底层计算0.1的时候，并不能完全彻底地将0.1表示成一个二进制数。感兴趣地可以自行搜索小数点的二进制转换原理。   
+        </p>
+        <br>
+        <h2><a name="a08">boolean</a></h2>
+        <p>boolean只有两个取值：true和false。默认值为false。boolean多用于判断，或当做flag开关。</p>
+    </div>  
+
+</body>
+</html>
